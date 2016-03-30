@@ -1,0 +1,73 @@
+/**
+ *
+ * @authors excaliburhan (edwardhjp@gmail.com)
+ * @date    2016-03-30 16:04:36
+ * @version $Id$
+ * title
+ */
+
+@import 'iconfont.less';
+@import 'reset.less';
+
+body {
+  width: 200px;
+}
+.pop-list {
+  padding:8px;
+  li {
+    position: relative;
+    overflow: hidden;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-image: linear-gradient(to top, #f8f8f8, #fff);
+    border: 1px solid #e3e3e3;
+    border-radius: 2px;
+    i, input, button {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &:not(.pop-old):hover,
+    &.pop-old button:hover {
+      color: #fff;
+      border: 1px solid #3Cb6FD;
+      background-image: linear-gradient(to top, #3CC6FD, #3cd6fd);
+      box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 0 inset, 0 1px 1px #CCC;
+    }
+    &.pop-old {
+      i {
+        float: left;
+        line-height: 25px;
+      }
+      input {
+        position: absolute;
+        right: 50px;
+        top: 0;
+        height: 33px;
+        width: 100px;
+        padding: 0 3px;
+        background: transparent;
+        &:focus {
+          box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.15);
+        }
+      }
+      button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 33px;
+        width: 50px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-image: linear-gradient(to top, #f8f8f8, #fff);
+        border-left: 1px solid #e3e3e3;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
+    }
+  }
+}

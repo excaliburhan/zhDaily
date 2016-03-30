@@ -1,23 +1,23 @@
 {
-  "name": "知乎日报常用版",
+  "name": "知乎日报Web版",
   "version": "1.0.0",
   "manifest_version": 2,
   "description": "知乎日报Chrome扩展Web版本 - Build By 韩小平",
   "icons": {
-    "16": "static/img/icon16.png",
-    "48": "static/img/icon48.png",
-    "128": "static/img/icon128.png"
+    "16": "prod/static/img/icon16.png",
+    "48": "prod/static/img/icon48.png",
+    "128": "prod/static/img/icon128.png"
   },
 
   // 弹出模版
   "browser_action": {
-    "default_icon": "static/img/icon16.png",
-    "default_title": "知乎日报常用版",
-    "default_popup": "template/popup.html"
+    "default_icon": "prod/static/img/icon16.png",
+    "default_title": "知乎日报Web版",
+    "default_popup": "prod/template/popup.html"
   },
 
   // 选项模版
-  "options_page": "template/options.html",
+  "options_page": "prod/template/options.html",
 
   // Chrome Api权限
   "permissions": [
@@ -32,9 +32,9 @@
 
   // 指定本扩展在注入的目标页面上所需使用的资源的路径
   "web_accessible_resources": [
-    "static/img/icon16.png",
-    "static/img/icon48.png",
-    "static/img/icon128.png"
+    "prod/static/img/icon16.png",
+    "prod/static/img/icon48.png",
+    "prod/static/img/icon128.png"
   ],
 
   // 内容脚本
