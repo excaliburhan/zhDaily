@@ -3,7 +3,7 @@
  * @authors excaliburhan (edwardhjp@gmail.com)
  * @date    2016-04-05 22:32:17
  * @version $Id$
- * zhDaily today
+ * zhDaily history
  */
 
 $(function () {
@@ -11,8 +11,12 @@ $(function () {
     apiVersion = 4,
     page = {
       init: function () {
+        var
+          theDay = location.search.split('=')[1];
+
+        theDay = page.getRightDate(theDay);
         page.bindEvent();
-        page.initList();
+        page.initList(theDay);
       },
       bindEvent: function () {
         var tag;
@@ -29,21 +33,40 @@ $(function () {
 
         location.href = 'detail.html?id='+ id;
       },
-      initList: function () {
+      // 计算正确日期
+      getRightDate: function ( date ) {
+        var
+          y, m, d, tomorrow, tomArr, ret;
+
+        y = +date.substr(0, 4);
+        m = +date.substr(4, 2);
+        d = +date.substr(6, 2);
+        tomorrow = new Date(+new Date(y +'-'+ m +'-'+ d) + 24*3600*1000);
+        tomorrow = tomorrow.toLocaleDateString();
+        tomArr = tomorrow.split('/');
+        if ( tomArr[1] < 10 ) {
+          tomArr[1] = '0'+ tomArr[1];
+        }
+        if ( tomArr[2] < 10 ) {
+          tomArr[2] = '0'+ tomArr[2];
+        }
+        ret = tomArr.join('');
+        return ret;
+      },
+      initList: function ( theDay ) {
         $.ajax({
           type: 'GET',
-          url: 'http://news-at.zhihu.com/api/'+ apiVersion +'/news/latest',
+          url: 'http://news-at.zhihu.com/api/'+ apiVersion +'/news/before/'+ theDay,
           data: {},
           dataType: 'json',
           timeout: 15000,
           success: function ( res ) {
             var
               date = res.date,
-              stories = res.stories,
-              topStories = res.top_stories;
+              stories = res.stories;
 
             $('.loading').remove();
-            page.renderList(date, topStories, stories);
+            page.renderList(date, stories);
           },
           error: function () {
             $('.loading').remove();
@@ -51,16 +74,13 @@ $(function () {
           }
         });
       },
-      renderList: function ( date, topStories, stories ) {
+      renderList: function ( date, stories ) {
         var
           fDate = page.formatDate(date),
-          fts = page.formatTop(topStories),
           fs = page.formatStories(stories);
 
         $('.date').html(fDate);
-        $('.top-stories').html(fts);
         $('.stories').html(fs);
-        page.initSlider();
       },
       formatDate: function ( date ) {
         var
@@ -72,21 +92,6 @@ $(function () {
 
         ret = y +'年'+ m +'月'+ d +'日';
         return ret;
-      },
-      formatTop: function ( rs ) {
-        var
-          tpl = '', i;
-
-        tpl += '<div class="slider-outer"><ul id="slider-wrap" class="slider-wrap">';
-        for ( i = 0; i < rs.length; i++ ) {
-          tpl += '<li class="top-li J_clickEvent" data-event="gotoEvent" data-id="'+ rs[i].id +'">';
-          tpl +=   '<img class="lib-lazy" dataimg="'+ rs[i].image +'">';
-          tpl +=   '<p>'+ rs[i].title +'</p>';
-          tpl += '</li>';
-        }
-        tpl += '</ul></div>';
-
-        return tpl;
       },
       formatStories: function ( rs ) {
         var
@@ -100,20 +105,6 @@ $(function () {
         }
 
         return tpl;
-      },
-      // 初始化轮播
-      initSlider: function () {
-        var
-          slider = window.lib.Slider;
-
-        new slider('.slider', {
-          loop: true,
-          play: true,
-          trigger: '.slider-status',
-          hasTrigger: true,
-          activeTriggerCls: 'active',
-          lazy: '.lib-lazy'
-        });
       }
     };
 

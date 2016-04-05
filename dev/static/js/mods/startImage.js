@@ -30,7 +30,8 @@ $(function () {
             $('.pic h3').text(text);
           },
           error: function () {
-            console.log('接口异常');
+            $('.loading').remove();
+            $('body').html('<div class="error">接口异常</div>');
           }
         });
       }

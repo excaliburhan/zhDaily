@@ -3,7 +3,7 @@
  * @authors excaliburhan (edwardhjp@gmail.com)
  * @date    2016-04-05 23:04:11
  * @version $Id$
- * zhDaily today
+ * zhDaily section
  */
 
 @import 'iconfont.less';
@@ -12,45 +12,11 @@
 @import 'loading.less';
 @import 'error.less';
 
-.top-stories {
-  width: 600px;
-  height: 375px;
-  margin: 0 auto;
-  margin-top: 40px;
-}
-.slider {
-  position: relative;
-  overflow: hidden;
-  li {
-    position: relative;
-    float: left;
-    width: 600px;
-    height: 375px;
-    cursor: pointer;
-    img {
-      width: 100%;
-    }
-    p {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 20px;
-      font-size: 18px;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.5);
-    }
-  }
-}
 .stories {
   width: 600px;
   margin: 0 auto;
   margin-bottom: 20px;
+  margin-top: 40px;
   background: #fff;
   li {
     overflow: hidden;
@@ -63,6 +29,13 @@
       width: 440px;
       padding-right: 18px;
       font-weight: bold;
+      span {
+        &:last-child {
+          font-size: 14px;
+          font-weight: normal;
+          color: #999;
+        }
+      }
     }
     img {
       float: right;
@@ -71,7 +44,7 @@
     }
   }
 }
-.date {
+.name {
   position: fixed;
   top: 0;
   left: 0;

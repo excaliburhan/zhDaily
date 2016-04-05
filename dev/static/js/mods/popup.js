@@ -24,7 +24,7 @@ $(function () {
       gotoEvent: function ( tag ) {
         var
           eType = tag.data('etype'),
-          val = $('.history-input').val(),
+          val = tag.data('query') || $('.history-input').val(),
           query = val ? ('?query='+ val) : '';
 
         page.openPage(eType, query);
