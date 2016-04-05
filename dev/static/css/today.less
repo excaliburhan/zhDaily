@@ -1,0 +1,84 @@
+/**
+ *
+ * @authors excaliburhan (edwardhjp@gmail.com)
+ * @date    2016-04-05 23:04:11
+ * @version $Id$
+ * zhDaily today
+ */
+
+@import 'iconfont.less';
+@import 'reset.less';
+@import 'animation.less';
+@import 'loading.less';
+
+.top-stories {
+  width: 600px;
+  height: 375px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  li {
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 375px;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+    p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      font-size: 18px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+.stories {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background: #fff;
+  li {
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+    cursor: pointer;
+    p {
+      float: left;
+      width: 440px;
+      padding-right: 18px;
+      font-weight: bold;
+    }
+    img {
+      float: right;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+.date {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background: #009DD7;
+}

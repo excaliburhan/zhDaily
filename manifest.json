@@ -16,6 +16,14 @@
     "default_popup": "prod/template/popup.html"
   },
 
+  // 背景页脚本
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "prod/static/js/vendors/zepto-1.1.6.min.js"
+    ]
+  },
+
   // 选项模版
   "options_page": "prod/template/options.html",
 

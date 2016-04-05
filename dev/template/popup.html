@@ -11,10 +11,6 @@
 </head>
 <body>
   <ul class="pop-list">
-    <li class="pop-pic J_clickEvent" data-event="gotoEvent" data-etype="pic">
-      <i class="iconfont">&#xe603;</i>
-      <span>今日启动图</span>
-    </li>
     <li class="pop-today J_clickEvent" data-event="gotoEvent" data-etype="today">
       <i class="iconfont">&#xe601;</i>
       <span>最新日报</span>
@@ -23,10 +19,14 @@
       <i class="iconfont">&#xe600;</i>
       <span>瞎扯合集</span>
     </li>
-    <li class="pop-old">
+    <li class="pop-pic J_clickEvent" data-event="gotoEvent" data-etype="startImage">
+      <i class="iconfont">&#xe603;</i>
+      <span>今日启动图</span>
+    </li>
+    <li class="pop-history">
       <i class="iconfont">&#xe602;</i>
-      <input type="text" class="old-input" placeholder="格式:20160330">
-      <button class="J_clickEvent" data-event="gotoEvent" data-etype="old">往期</button>
+      <input type="text" class="history-input" placeholder="格式:20160330">
+      <button class="J_clickEvent" data-event="gotoEvent" data-etype="history">往期</button>
     </li>
   </ul>
   <script src="../static/js/vendors/zepto-1.1.6.min.js"></script>

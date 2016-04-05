@@ -3,11 +3,12 @@
  * @authors excaliburhan (edwardhjp@gmail.com)
  * @date    2016-03-30 16:04:36
  * @version $Id$
- * title
+ * zhDaily popup页面
  */
 
-@import 'iconfont.less';
 @import 'reset.less';
+@import 'iconfont.less';
+// @import 'animation.less';
 
 body {
   width: 200px;
@@ -31,14 +32,14 @@ body {
       vertical-align: middle;
     }
 
-    &:not(.pop-old):hover,
-    &.pop-old button:hover {
+    &:not(.pop-history):hover,
+    &.pop-history button:hover {
       color: #fff;
       border: 1px solid #3Cb6FD;
       background-image: linear-gradient(to top, #3CC6FD, #3cd6fd);
       box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 0 inset, 0 1px 1px #CCC;
     }
-    &.pop-old {
+    &.pop-history {
       i {
         float: left;
         line-height: 25px;

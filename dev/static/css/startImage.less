@@ -1,0 +1,51 @@
+/**
+ *
+ * @authors excaliburhan (edwardhjp@gmail.com)
+ * @date    2016-03-30 16:04:36
+ * @version $Id$
+ * zhDaily startImage页面
+ */
+
+@import 'iconfont.less';
+@import 'reset.less';
+@import 'animation.less';
+
+.pic {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  img {
+    display: none;
+    width: 439px;
+    height: 782px;
+
+    &.show {
+      display: block;
+    }
+  }
+  h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 439px;
+    line-height: 40px;
+    margin: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, 50%, 0);
+    font-size: 40px;
+    -webkit-animation-name: 'loading';
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+  }
+}
+

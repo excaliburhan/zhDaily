@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1459329494'); /* IE9*/
-  src: url('iconfont.eot?t=1459329494#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1459329494') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1459329494') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1459329494#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1459653754'); /* IE9*/
+  src: url('iconfont.eot?t=1459653754#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1459653754') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1459653754') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1459653754#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -15,6 +15,8 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-loading:before { content: "\e607"; }
+.icon-loading1:before { content: "\e606"; }
 .icon-bubble:before { content: "\e600"; }
 .icon-cloud:before { content: "\e601"; }
 .icon-magnifier:before { content: "\e602"; }

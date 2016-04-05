@@ -1,0 +1,1 @@
+.loading{position:absolute;top:50%;left:50%;-webkit-transform:translate3d(-50%,50%,0);transform:translate3d(-50%,50%,0);font-size:40px;-webkit-animation-name:loading;-webkit-animation-duration:1s;-webkit-animation-fill-mode:both;-webkit-animation-iteration-count:infinite}

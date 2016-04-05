@@ -52,7 +52,7 @@ gulp.task('js', function () {
 gulp.task('img', function () {
   gulp.src('dev/static/img/*.{jpg,png,svg,gif,jpeg}', option)
     .pipe(imgmin())
-    .pipe(gulp.dest(prod))
+    .pipe(gulp.dest(prod));
 });
 
 /**
@@ -69,15 +69,24 @@ gulp.task('html', function() {
       minifyJS: true,
       minifyCSS: true
     }))
-    .pipe(gulp.dest(prod))
+    .pipe(gulp.dest(prod));
+});
+
+/**
+ * Source任务
+ */
+gulp.task('source', function () {
+  gulp.src('dev/static/source/**/*.*', option)
+    .pipe(gulp.dest(prod));
 });
 
 // 任务
-gulp.task('release', ['css', 'js', 'img', 'html']);
+gulp.task('release', ['css', 'js', 'img', 'html', 'source']);
 
 gulp.task('watch', function () {
   gulp.watch('dev/static/css/*.less', ['css']);
   gulp.watch('dev/static/img/*.{jpg,png,svg,gif,jpeg}', ['img']);
+  gulp.watch('dev/static/source/**/*.*', ['source']);
   gulp.watch('dev/static/js/**/*.js', ['js'], function () {
     browserSync.reload();
   });
