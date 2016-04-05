@@ -1,2 +1,4 @@
 # zhDaily
-chrome extension via Zhihu.Inc
+* 本插件是基于知乎日报接口制作完成
+* 感谢izzyleung提供的知乎日报接口
+* 如有侵权，本人会立即下架扩展应用

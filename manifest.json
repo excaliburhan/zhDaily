@@ -8,26 +8,17 @@
     "48": "prod/static/img/icon48.png",
     "128": "prod/static/img/icon128.png"
   },
-
-  // 弹出模版
   "browser_action": {
     "default_icon": "prod/static/img/icon16.png",
     "default_title": "知乎日报Web版",
     "default_popup": "prod/template/popup.html"
   },
-
-  // 背景页脚本
   "background": {
     "persistent": true,
     "scripts": [
       "prod/static/js/vendors/zepto-1.1.6.min.js"
     ]
   },
-
-  // 选项模版
-  // "options_page": "prod/template/options.html",
-
-  // Chrome Api权限
   "permissions": [
     "tabs",
     "contextMenus",
@@ -35,22 +26,14 @@
     "notifications",
     "alarms",
     "webNavigation",
-    "\u003Call_urls\u003E"  // <all_urls>
+    "\u003Call_urls\u003E"
   ],
-
-  // 指定本扩展在注入的目标页面上所需使用的资源的路径
   "web_accessible_resources": [
     "prod/static/img/icon16.png",
     "prod/static/img/icon48.png",
     "prod/static/img/icon128.png"
   ],
-
-  // 内容脚本
   "content_scripts": [],
-
-  // 安全策略
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com 'unsafe-eval'; object-src 'self'",
-
-  // 主页地址
-  "homepage_url": "http://www.excaliburhan.com/code"
+  "homepage_url": "http://www.excaliburhan.com"
 }
