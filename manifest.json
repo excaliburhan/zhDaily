@@ -25,7 +25,7 @@
   },
 
   // 选项模版
-  "options_page": "prod/template/options.html",
+  // "options_page": "prod/template/options.html",
 
   // Chrome Api权限
   "permissions": [
