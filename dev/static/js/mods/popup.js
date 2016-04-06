@@ -20,6 +20,12 @@ $(function () {
           page[tag.data('event')] && page[tag.data('event')](tag);
           window[tag.data('event')] && window[tag.data('event')](tag);
         });
+        $(document).delegate('.J_keydownEvent', 'keydown', function ( e ) {
+          tag = $(e.currentTarget);
+          if ( e.keyCode === 13 ) {
+            page[tag.data('secevent')] && page[tag.data('secevent')](tag);
+          }
+        });
       },
       gotoEvent: function ( tag ) {
         var
@@ -32,7 +38,7 @@ $(function () {
       openPage: function ( fileName, query ) {
         chrome.tabs.query({windowId: chrome.windows.WINDOW_ID_CURRENT}, function ( tabs ) {
           var
-            reg = new RegExp('^chrome.*' + fileName + '.html$', 'i'),
+            reg = new RegExp('^chrome.*' + fileName + '.html.*$', 'i'),
             isOpened = false,
             tabId, i;
 

@@ -38,6 +38,16 @@ $(function () {
         var
           y, m, d, tomorrow, tomArr, ret;
 
+        if ( !date ) {
+          tomArr = new Date().toLocaleDateString().split('/');
+          if ( tomArr[1] < 10 ) {
+            tomArr[1] = '0'+ tomArr[1];
+          }
+          if ( tomArr[2] < 10 ) {
+            tomArr[2] = '0'+ tomArr[2];
+          }
+          return tomArr.join('');
+        }
         y = +date.substr(0, 4);
         m = +date.substr(4, 2);
         d = +date.substr(6, 2);
