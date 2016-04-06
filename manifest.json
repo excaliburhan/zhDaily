@@ -1,6 +1,6 @@
 {
   "name": "知乎日报Web版",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "manifest_version": 2,
   "description": "知乎日报Chrome扩展Web版本 - Build By 韩小平",
   "icons": {

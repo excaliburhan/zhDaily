@@ -57,6 +57,7 @@ $(function () {
         var
           fs = page.formatStories(stories);
 
+        $('title').html(name);
         $('.name').html(name);
         $('.stories').html(fs);
       },
