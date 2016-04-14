@@ -1,6 +1,6 @@
 {
   "name": "知乎日报Web版",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "manifest_version": 2,
   "description": "知乎日报Chrome扩展Web版本 - Build By 韩小平",
   "icons": {
@@ -19,6 +19,7 @@
       "prod/static/js/vendors/zepto-1.1.6.min.js"
     ]
   },
+  "options_page": "prod/template/options.html",
   "permissions": [
     "tabs",
     "contextMenus",

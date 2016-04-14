@@ -8,9 +8,11 @@
 
 $(function () {
   var
+    Storage = storage(),
     page = {
       init: function () {
         page.bindEvent();
+        page.insertSettings();
       },
       bindEvent: function () {
         var tag;
@@ -30,8 +32,23 @@ $(function () {
       gotoEvent: function ( tag ) {
         var
           eType = tag.data('etype'),
-          val = tag.data('query') || $('.history-input').val(),
-          query = val ? ('?query='+ val) : '';
+          section = tag.data('section'),
+          theme = tag.data('theme'),
+          val = $('.history-input').val() || '',
+          query;
+
+        if ( val ) {
+          query = '?query='+ val;
+        }
+        else if ( section ) {
+          query = '?sction='+ section;
+        }
+        else if ( theme ) {
+          query = '?sction='+ theme;
+        }
+        else {
+          query = '';
+        }
 
         page.openPage(eType, query);
       },
@@ -60,6 +77,31 @@ $(function () {
             chrome.tabs.update(tabId, {highlighted: true});
           }
         });
+      },
+      insertSettings: function () {
+        var
+          section = Storage.get('section'),
+          sections = Storage.get('sections'),
+          theme = Storage.get('theme'),
+          themes = Storage.get('themes'),
+          tpl = '';
+
+        section.forEach(function ( id ) {
+          tpl += '<li class="J_clickEvent" data-event="gotoEvent" data-etype="section"';
+          tpl +=   'data-section="'+ id +'">';
+          tpl +=   '<i class="iconfont">&#xe600;</i>';
+          tpl +=   '<span>'+ sections[id] +'</span>';
+          tpl += '</li>';
+        });
+        theme.forEach(function ( id ) {
+          tpl += '<li class="J_clickEvent" data-event="gotoEvent" data-etype="theme"';
+          tpl +=   'data-theme="'+ id +'">';
+          tpl +=   '<i class="iconfont">&#xe605;</i>';
+          tpl +=   '<span>'+ themes[id] +'</span>';
+          tpl += '</li>';
+        });
+
+        $(tpl).insertBefore($('.pop-pic'));
       }
     };
 
