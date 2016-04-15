@@ -69,7 +69,6 @@ $(function () {
           tpl += '<li class="bottom-li J_clickEvent" data-event="gotoEvent" data-id="'+ rs[i].id +'">';
           tpl +=   '<p>';
           tpl +=     '<span>'+ rs[i].title +'</span><br>';
-          tpl +=     '<span>'+ rs[i].display_date +'</span>';
           tpl +=   '</p>';
           tpl +=   '<img src="'+ rs[i].images[0] +'">';
           tpl += '</li>';

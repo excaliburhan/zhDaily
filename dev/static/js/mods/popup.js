@@ -38,13 +38,13 @@ $(function () {
           query;
 
         if ( val ) {
-          query = '?query='+ val;
+          query = 'query='+ val;
         }
         else if ( section ) {
-          query = '?sction='+ section;
+          query = 'section='+ section;
         }
         else if ( theme ) {
-          query = '?sction='+ theme;
+          query = 'theme='+ theme;
         }
         else {
           query = '';
@@ -55,9 +55,11 @@ $(function () {
       openPage: function ( fileName, query ) {
         chrome.tabs.query({windowId: chrome.windows.WINDOW_ID_CURRENT}, function ( tabs ) {
           var
-            reg = new RegExp('^chrome.*' + fileName + '.html.*$', 'i'),
+            reg = new RegExp('^chrome.*' + fileName + '.html(\\?{0,1})'+ query +'$', 'i'),
             isOpened = false,
             tabId, i;
+
+          console.log(reg)
 
           // 每个tab注册状态(是否打开/id)
           for ( i = 0; i < tabs.length; i++ ) {
@@ -68,6 +70,9 @@ $(function () {
             }
           }
           if ( !isOpened ) {
+            if ( query ) {
+              query = '?'+ query;
+            }
             chrome.tabs.create({
               url: 'prod/template/'+ fileName +'.html'+ query,
               active: true

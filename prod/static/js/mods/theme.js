@@ -5,5 +5,5 @@ query=location.search.split('=')[1];page.bindEvent();page.initList(query);},bind
 id=tag.data('id');location.href='detail.html?id='+id;},initList:function(query){$.ajax({type:'GET',url:'http://news-at.zhihu.com/api/'+apiVersion+'/theme/'+query,data:{},dataType:'json',timeout:15000,success:function(res){var
 name=res.name,stories=res.stories;$('.loading').remove();page.renderList(name,stories);},error:function(){$('.loading').remove();$('body').html('<div class="error">接口异常</div>');}});},renderList:function(name,stories){var
 fs=page.formatStories(stories);$('title').html(name);$('.name').html(name);$('.stories').html(fs);},formatStories:function(rs){var
-tpl='',i;for(i=0;i<rs.length;i++){tpl+='<li class="bottom-li J_clickEvent" data-event="gotoEvent" data-id="'+rs[i].id+'">';tpl+='<p>';tpl+='<span>'+rs[i].title+'</span><br>';tpl+='<span>'+rs[i].display_date+'</span>';tpl+='</p>';tpl+='<img src="'+rs[i].images[0]+'">';tpl+='</li>';}
+tpl='',i;for(i=0;i<rs.length;i++){tpl+='<li class="bottom-li J_clickEvent" data-event="gotoEvent" data-id="'+rs[i].id+'">';tpl+='<p>';tpl+='<span>'+rs[i].title+'</span><br>';tpl+='</p>';tpl+='<img src="'+rs[i].images[0]+'">';tpl+='</li>';}
 return tpl;}};page.init();});
