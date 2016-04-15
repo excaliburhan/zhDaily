@@ -87,10 +87,10 @@ $(function () {
       renderList: function ( date, stories ) {
         var
           fDate = page.formatDate(date),
-          fs = page.formatStories(stories);
+          frs = page.formatStories(stories);
 
         $('.date').html(fDate);
-        $('.stories').html(fs);
+        $('.stories').html(frs);
       },
       formatDate: function ( date ) {
         var
@@ -105,12 +105,13 @@ $(function () {
       },
       formatStories: function ( rs ) {
         var
-          tpl = '', i;
+          tpl = '', tmpImg, i;
 
         for ( i = 0; i < rs.length; i++ ) {
+          tmpImg = rs[i].images ? rs[i].images[0] : '';
           tpl += '<li class="bottom-li J_clickEvent" data-event="gotoEvent" data-id="'+ rs[i].id +'">';
           tpl +=   '<p>'+ rs[i].title +'</p>';
-          tpl +=   '<img src="'+ rs[i].images[0] +'">';
+          tpl +=   '<img src="'+ tmpImg +'">';
           tpl += '</li>';
         }
 

@@ -55,22 +55,23 @@ $(function () {
       },
       renderList: function ( name, stories ) {
         var
-          fs = page.formatStories(stories);
+          frs = page.formatStories(stories);
 
         $('title').html(name);
         $('.name').html(name);
-        $('.stories').html(fs);
+        $('.stories').html(frs);
       },
       formatStories: function ( rs ) {
         var
-          tpl = '', i;
+          tpl = '', tmpImg, i;
 
         for ( i = 0; i < rs.length; i++ ) {
+          tmpImg = rs[i].images ? rs[i].images[0] : '';
           tpl += '<li class="bottom-li J_clickEvent" data-event="gotoEvent" data-id="'+ rs[i].id +'">';
           tpl +=   '<p>';
           tpl +=     '<span>'+ rs[i].title +'</span><br>';
           tpl +=   '</p>';
-          tpl +=   '<img src="'+ rs[i].images[0] +'">';
+          tpl +=   '<img src="'+ tmpImg +'">';
           tpl += '</li>';
         }
 
