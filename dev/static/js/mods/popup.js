@@ -59,8 +59,6 @@ $(function () {
             isOpened = false,
             tabId, i;
 
-          console.log(reg)
-
           // 每个tab注册状态(是否打开/id)
           for ( i = 0; i < tabs.length; i++ ) {
             if ( reg.test(tabs[i].url) ) {

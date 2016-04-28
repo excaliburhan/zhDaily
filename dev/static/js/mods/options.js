@@ -134,7 +134,7 @@ $(function () {
             $('.btn-off[data-event="'+ type +'"][data-id="'+ id +'"]').removeClass('on');
             $('.btn-on[data-event="'+ type +'"][data-id="'+ id +'"]').addClass('on');
           });
-        } 
+        }
       },
       section: function ( tag ) {
         var
